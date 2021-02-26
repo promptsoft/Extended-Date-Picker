@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="pepl" constructor="ExtendedDatePicker" version="0.0.1" display-name-key="Extended Date Picker" description-key="Extended Date Picker description" control-type="standard">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+     <property name="inputDate" display-name-key="Date" description-key="Date field that shows the Office Fabric UI Date Picker with some more configuration." of-type="DateAndTime.DateOnly" usage="bound" required="true" />
+    <property name="readOnly" display-name-key="Read-Only" description-key="Make Date field ready only" of-type="Enum" usage="input" required="true">
+    <value name="Yes" display-name-key="Yes" description-key="Make Date Picker read only.">0</value>
+      <value name="No" display-name-key="No" description-key="Do not Make Date Picker read only" >1</value>
+    </property>
+    <property name="Allowpastdate" display-name-key="Allow Past Date" description-key="Allow Selection of Past Date" of-type="Enum" usage="input" required="true">
+    <value name="Yes" display-name-key="Yes" description-key="Allow selection of past date.">0</value>
+      <value name="No" display-name-key="No" description-key="Do not allow selection of past date." >1</value>
+    </property>
+    <!-- 
+      Property node's of-type attribute can be of-type-group attribute. 
+      Example:
+      <type-group name="numbers">
+        <type>Whole.None</type>
+        <type>Currency</type>
+        <type>FP</type>
+        <type>Decimal</type>
+      </type-group>
+      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
+    -->
+    <resources>
+      <code path="index.ts" order="1"/>
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/ExtendedDatePicker.css" order="1" />
+      <resx path="strings/ExtendedDatePicker.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
