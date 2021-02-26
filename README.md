@@ -1,10 +1,11 @@
 # Extended Date Picker (Office UI Fabric)
-This control is developed from Date Picker(https://pcf.gallery/date-picker/). This control allows you to change your Date Only field with Extended Date Picker with some more ability : 
+This control is developed from Date Picker(https://pcf.gallery/date-picker/). This control allows you to change your Date Only field with Extended Date Picker with some more features. 
 
-* If date is of past(today) than it will show you "Red" Icon.  
-* If date is not past than it will show you "Green" Icon.
-* If user wants to allow only selection of future dates.
+## Features 
 
+* Rectrict user from selecting past dates
+* Shows expiration icon (Red/Green) iff date is of past(today).  
+* Make field read only.
 
 
 ## Configuration
@@ -15,16 +16,18 @@ This is the list of parameters that can be set on the control.
 |---------|-----------|:----:|:---:|
 |**Date**|Attribute to use as label for the checkbox|X|X|
 |**Read-Only**|Make Date field ready only **|||
-|**Allow Past Date**|Allow Selection of Past Date||X|
+|**Allow Past Date**|Allow Selection of Past Date|||
 
 
 ## How to Use ?
 
+###Add the custom control to the field
 ![alt text](/Image/image1.png "Add the custom control to the field")
 
+###Configure the control
+![alt text](/Image/image2.png "Configure the control")
 
-![alt text](/Image/image2.jpg "Configure the control")
+###Add the custom control to the field
+![alt text](/Image/usecontrol.png "Add the custom control to the field")
 
-
-![alt text](/Image/usecontrol.jpg "Add the custom control to the field")
-
+For any questions and concerns, please write to [crmsupport@promptsoftech.com](mailto:crmsupport@promptsoftech.com)
