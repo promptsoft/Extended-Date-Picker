@@ -21,13 +21,13 @@ This is the list of parameters that can be set on the control.
 
 ## How to Use ?
 
-######Add the custom control to the field
+###### Add the custom control to the field
 ![alt text](/Image/image1.png "Add the custom control to the field")
 
-######Configure the control
+###### Configure the control
 ![alt text](/Image/image2.png "Configure the control")
 
-######Add the custom control to the field
+###### Add the custom control to the field
 ![alt text](/Image/usecontrol.png "Add the custom control to the field")
 
 For any questions and concerns, please write to [crmsupport@promptsoftech.com](mailto:crmsupport@promptsoftech.com)
