@@ -4,7 +4,7 @@ This control is developed from Date Picker(https://pcf.gallery/date-picker/). Th
 ## Features 
 
 * Rectrict user from selecting past dates
-* Shows expiration icon (Red/Green) iff date is of past(today).  
+* Shows expiration icon (Red/Green) if date is of past(<=today).  
 * Make field read only.
 
 
@@ -21,13 +21,23 @@ This is the list of parameters that can be set on the control.
 
 ## How to Use ?
 
-###### Add the custom control to the field
+###### Download & Import solution
+
+Download managed solution from ExtendedDtPickerManaged/ExtendedDtPickerManaged.zip path and import into your organization.
+
+###### Add the custom control to Date Only field
 ![alt text](/Image/image1.png "Add the custom control to the field")
 
 ###### Configure the control
 ![alt text](/Image/image2.png "Configure the control")
 
-###### Add the custom control to the field
-![alt text](/Image/usecontrol.png "Add the custom control to the field")
+###### Date Picker Control
+![alt text](/Image/image4.png "Add the custom control to the field")
+
+###### Read only Date Picker Control
+![alt text](/Image/image7.png "Add the custom control to the field")
+
+###### Expired(past) Date Picker Control
+![alt text](/Image/image6.png "Add the custom control to the field")
 
 For any questions and concerns, please write to [crmsupport@promptsoftech.com](mailto:crmsupport@promptsoftech.com)
