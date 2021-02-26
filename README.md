@@ -35,9 +35,9 @@ Download managed solution from ExtendedDtPickerManaged/ExtendedDtPickerManaged.z
 ![alt text](/Image/image4.png "Add the custom control to the field")
 
 ###### Read only Date Picker Control
-![alt text](/Image/image7.png "Add the custom control to the field")
+![alt text](/Image/image7.PNG "Add the custom control to the field")
 
 ###### Expired(past) Date Picker Control
-![alt text](/Image/image6.png "Add the custom control to the field")
+![alt text](/Image/image6.PNG "Add the custom control to the field")
 
 For any questions and concerns, please write to [crmsupport@promptsoftech.com](mailto:crmsupport@promptsoftech.com)
