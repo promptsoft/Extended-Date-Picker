@@ -15,6 +15,8 @@ export class ExtendedDatePicker implements ComponentFramework.StandardControl<II
 		  this.props.inputDate = newValue;
 		  this.props.varreadOnly= this.props.varreadOnly;
 		  this.props.Allowpastdate = this.props.Allowpastdate;
+		  this.props.ShowExpirationForNullOnly= this.props.ShowExpirationForNullOnly;
+		  this.props.DateLocaleFormat = this.props.DateLocaleFormat;
 		  this.notifyOutputChanged();
 		}
 	  }
@@ -30,13 +32,15 @@ export class ExtendedDatePicker implements ComponentFramework.StandardControl<II
 	 */
 	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement)
 	{
+		debugger;
 		// Add control initialization code
 		this._container = container;
 		this.props.CurrentDate =new Date();
 		this.props.inputDate = context.parameters.inputDate.raw || new Date();
 		this.props.varreadOnly= context.parameters.readOnly.raw;
 		this.props.Allowpastdate= context.parameters.Allowpastdate.raw;
-	
+		this.props.ShowExpirationForNullOnly= context.parameters.ShowExpirationForNullOnly.raw;
+		this.props.DateLocaleFormat = context.parameters.inputDate.formatted;
 		this.notifyOutputChanged = notifyOutputChanged;
 	}
 
@@ -47,7 +51,7 @@ export class ExtendedDatePicker implements ComponentFramework.StandardControl<II
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
-		
+		debugger;
 		if (this.props.inputDate != context.parameters.inputDate.raw) {
 			this.props.inputDate = context.parameters.inputDate.raw;
 		  }

@@ -7,6 +7,8 @@ import { initializeIcons } from "office-ui-fabric-react/lib/Icons";
 import { Icon} from "office-ui-fabric-react/lib/Icon";
 import { Stack, IStackItemStyles,IStackTokens } from 'office-ui-fabric-react/lib/Stack';
 
+import moment = require("moment");
+
 initializeIcons(undefined, { disableWarnings: true });
 const DayPickerStrings: IDatePickerStrings = {
   months: [
@@ -61,8 +63,10 @@ export interface IDatePickerProps {
   CurrentDate?: Date;
   varreadOnly?: string;
   Allowpastdate?: string;
+  ShowExpirationForNullOnly?:string;
+  DateLocaleFormat?:string;
 }
-const outerStackTokens: IStackTokens = { childrenGap: 2 };
+const outerStackTokens: IStackTokens = { childrenGap:2 };
 const nonShrinkingStackItemStyles: IStackItemStyles = {
   root: {
     alignItems: 'center',
@@ -72,6 +76,7 @@ const nonShrinkingStackItemStyles: IStackItemStyles = {
     width: 20,
   },
 };
+
 export interface IDatePickerState
   extends React.ComponentState,
     IDatePickerProps {}
@@ -82,35 +87,54 @@ export class ExDatePicker extends React.Component<
 > {
   constructor(props: IDatePickerProps) {
     super(props);
-
+    debugger;
+    moment.locale('en');
+    console.log("Date:" + props.inputDate);
     this.state = {
       inputDate: props.inputDate,
      CurrentDate: new Date(),
      varreadOnly:props.varreadOnly,
-     AllowPastDate:props.Allowpastdate
+     AllowPastDate:props.Allowpastdate,
+     DateLocaleFormat:props.DateLocaleFormat,
+     ShowExpirationForNullOnly:props.ShowExpirationForNullOnly,
+     
     };
+  }
+  formatDate(dt:Date){
+    debugger;
+    
+    //console.log("format-"+ formatinfo);
+    console.log("Date:" + dt);
+    return moment(dt).format();
+    //return  dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear().toString().substr(-2) ;
   }
 
   render(): JSX.Element {
     return ( 
+      
       <Stack {...outerStackTokens}>
         <Stack horizontal>
-        <Stack.Item  disableShrink styles={nonShrinkingStackItemStyles} >
-            <Icon className="colorIcon" style={{ color: this.state.inputDate < this.state.CurrentDate ? "red" :"green"}}  iconName="CircleShapeSolid" aria-hidden="true" /> 
+          {this.state.ShowExpirationForNullOnly=="0"?
+          
+              <Stack.Item  disableShrink style={{visibility:this.state.inputDate ==null?'visible': 'hidden',width:this.state.inputDate ==null?20: 0}} styles={nonShrinkingStackItemStyles} >
+              <Icon className="colorIcon"  style={{ color: this.state.inputDate ==null ? "red" :"green"}}  iconName="CircleShapeSolid" aria-hidden="true" /> 
+            </Stack.Item>
+          :
+          <Stack.Item  disableShrink  styles={nonShrinkingStackItemStyles} >
+            <Icon className="colorIcon"  style={{ color: this.state.inputDate < this.state.CurrentDate ? "red" :"green"}}  iconName="CircleShapeSolid" aria-hidden="true" /> 
           </Stack.Item>
+          }
+        
           <Stack.Item grow >
                 <DatePicker
+                formatDate={(date) => this.state.DateLocaleFormat}
+                //formatDate={(date) => new Date(date).format(this.state.DateLocaleFormat)}
                 strings={DayPickerStrings}
                 firstWeekOfYear={1}
                 placeholder="Select a date..."
                 ariaLabel="Select a date"
                 minDate={this.state.AllowPastDate=="0"?null:this.state.CurrentDate}
                 value={this.state.inputDate}
-                formatDate={date =>
-                  `${date.toLocaleDateString(
-                    navigator.languages && navigator.languages[0]
-                  )}`
-                }
                 showWeekNumbers={true}
                 onSelectDate={this.onSelectDate}
                 disabled={this.state.varreadOnly=="0"? true : false }
