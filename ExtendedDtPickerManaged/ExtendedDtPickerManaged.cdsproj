@@ -41,6 +41,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Extended Date Picker.pcfproj" />
+    <ProjectReference Include="..\..\..\BingAddressAutocomplete\BingAddressAutoComplete_PCF.pcfproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

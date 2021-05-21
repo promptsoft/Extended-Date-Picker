@@ -127,7 +127,7 @@ export class ExDatePicker extends React.Component<
         
           <Stack.Item grow >
                 <DatePicker
-                formatDate={(date) => this.state.DateLocaleFormat}
+                formatDate={(date) =>  moment(date).format(this.state.DateLocaleFormat)}
                 //formatDate={(date) => new Date(date).format(this.state.DateLocaleFormat)}
                 strings={DayPickerStrings}
                 firstWeekOfYear={1}

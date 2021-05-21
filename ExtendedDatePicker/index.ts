@@ -40,7 +40,7 @@ export class ExtendedDatePicker implements ComponentFramework.StandardControl<II
 		this.props.varreadOnly= context.parameters.readOnly.raw;
 		this.props.Allowpastdate= context.parameters.Allowpastdate.raw;
 		this.props.ShowExpirationForNullOnly= context.parameters.ShowExpirationForNullOnly.raw;
-		this.props.DateLocaleFormat = context.parameters.inputDate.formatted;
+		this.props.DateLocaleFormat = context.userSettings.dateFormattingInfo.shortDatePattern.replace("yyyy","YYYY").replace("yy","YY").replace("dd","DD").replace("d","D").replace("/",context.userSettings.dateFormattingInfo.dateSeparator).replace("/",context.userSettings.dateFormattingInfo.dateSeparator);
 		this.notifyOutputChanged = notifyOutputChanged;
 	}
 
