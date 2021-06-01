@@ -136,6 +136,7 @@ export class ExDatePicker extends React.Component<
                 minDate={this.state.AllowPastDate=="0"?null:this.state.CurrentDate}
                 value={this.state.inputDate}
                 showWeekNumbers={true}
+                allowTextInput={true}
                 onSelectDate={this.onSelectDate}
                 disabled={this.state.varreadOnly=="0"? true : false }
               />
